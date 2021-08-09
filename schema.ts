@@ -17,6 +17,7 @@ export const lists = createSchema({
     },
     fields: {
       firstname: text({ isRequired: true }),
+      middlename: text({isRequired:true}),
       lastname: text({isRequired:true}),
       email: text({ isRequired: true, isUnique: true }),
       password: password({ isRequired: true }),
