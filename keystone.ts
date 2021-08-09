@@ -1,10 +1,12 @@
 import { config } from '@keystone-next/keystone/schema';
 import { statelessSessions } from '@keystone-next/keystone/session';
 import { createAuth } from '@keystone-next/auth';
-
+require('dotenv').config();
 import { lists } from './schema';
 
 let sessionSecret = process.env.SESSION_SECRET;
+
+
 
 if (!sessionSecret) {
   if (process.env.NODE_ENV === 'production') {
@@ -32,6 +34,8 @@ const session = statelessSessions({
   maxAge: sessionMaxAge,
   secret: sessionSecret,
 });
+
+
 
 export default withAuth(
   config({
