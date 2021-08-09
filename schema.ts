@@ -20,6 +20,7 @@ export const lists = createSchema({
       middlename: text({isRequired:true}),
       lastname: text({isRequired:true}),
       dateOfBirth:text({isRequired:true}),
+      motherName:text({isRequired:true}),
       email: text({ isRequired: true, isUnique: true }),
       password: password({ isRequired: true }),
       posts: relationship({ ref: 'Post.author', many: true }),
