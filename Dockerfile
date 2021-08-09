@@ -4,4 +4,5 @@ ENV PORT 80
 COPY package.json /code/package.json
 COPY . /code
 RUN yarn install
-CMD ["yarn", "dev"]
+RUN yarn build
+ENTRYPOINT ["yarn", "run"]
