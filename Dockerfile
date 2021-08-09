@@ -5,4 +5,4 @@ COPY package.json /code/package.json
 COPY . /code
 RUN yarn install
 RUN yarn build
-CMD ["yarn", "dev"]
+ENTRYPOINT ["yarn", "run"]
