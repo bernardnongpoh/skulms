@@ -12,11 +12,11 @@ export const lists = createSchema({
   User: list({
     ui: {
       listView: {
-        initialColumns: ['firstname', 'posts'],
+        initialColumns: ['name', 'posts'],
       },
     },
     fields: {
-      firstname: text({ isRequired: true }),
+      name: text({ isRequired: true }),
       middlename: text({isRequired:true}),
       lastname: text({isRequired:true}),
       dateOfBirth:text({isRequired:true}),
