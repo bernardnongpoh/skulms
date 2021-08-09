@@ -1,7 +1,7 @@
 import { config } from '@keystone-next/keystone/schema';
 import { statelessSessions } from '@keystone-next/keystone/session';
 import { createAuth } from '@keystone-next/auth';
-
+require('dotenv').config();
 import { lists } from './schema';
 
 let sessionSecret = process.env.SESSION_SECRET;
