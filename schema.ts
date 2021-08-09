@@ -12,12 +12,15 @@ export const lists = createSchema({
   User: list({
     ui: {
       listView: {
-        initialColumns: ['name', 'posts'],
+        initialColumns: ['firstname', 'posts'],
       },
     },
     fields: {
-      name: text({ isRequired: true }),
-      surname: text({isRequired:true}),
+      firstname: text({ isRequired: true }),
+      middlename: text({isRequired:true}),
+      lastname: text({isRequired:true}),
+      dateOfBirth:text({isRequired:true}),
+      motherName:text({isRequired:true}),
       email: text({ isRequired: true, isUnique: true }),
       password: password({ isRequired: true }),
       posts: relationship({ ref: 'Post.author', many: true }),
