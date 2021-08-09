@@ -1,17 +1,14 @@
 name: SkulMS CI  
-  
 on:
-  
    push: 
       branches: 
        - staging 
   
 jobs: 
-     
+ 
    cd: 
      runs-on: ubuntu-latest 
      
-  
      steps: 
        - uses: actions/checkout@v1 
        - name: Docker login 
