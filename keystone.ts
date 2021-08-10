@@ -6,6 +6,8 @@ import { lists } from './schema';
 
 let sessionSecret = process.env.SESSION_SECRET;
 
+
+
 if (!sessionSecret) {
   if (process.env.NODE_ENV === 'production') {
     throw new Error(
@@ -32,6 +34,8 @@ const session = statelessSessions({
   maxAge: sessionMaxAge,
   secret: sessionSecret,
 });
+
+
 
 export default withAuth(
   config({

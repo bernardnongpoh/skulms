@@ -6,4 +6,4 @@ COPY . /code
 RUN yarn postinstall-fix
 RUN yarn install
 RUN yarn build
-CMD ["yarn", "dev"]
+ENTRYPOINT ["yarn", "run"]
