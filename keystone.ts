@@ -41,7 +41,7 @@ export default withAuth(
   config({
     db: {
       adapter: 'prisma_postgresql',
-      url: process.env.DATABASE_URL || 'postgres://postgres:postgres@db/skulms-db',
+      url: process.env.DATABASE_URL || 'postgres://postgres:postgres@db/postgres',
     },
     ui: {
       isAccessAllowed: (context) => !!context.session?.data,
