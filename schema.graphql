@@ -1,7 +1,11 @@
 type User {
   id: ID!
   name: String
-  surname: String
+  middlename: String
+  lastname: String
+  dateOfBirth: String
+  motherName: String
+  fatherName: String
   email: String
   password: PasswordState
   posts(
@@ -66,24 +70,96 @@ input UserWhereInput {
   name_not_ends_with_i: String
   name_in: [String]
   name_not_in: [String]
-  surname: String
-  surname_not: String
-  surname_contains: String
-  surname_not_contains: String
-  surname_starts_with: String
-  surname_not_starts_with: String
-  surname_ends_with: String
-  surname_not_ends_with: String
-  surname_i: String
-  surname_not_i: String
-  surname_contains_i: String
-  surname_not_contains_i: String
-  surname_starts_with_i: String
-  surname_not_starts_with_i: String
-  surname_ends_with_i: String
-  surname_not_ends_with_i: String
-  surname_in: [String]
-  surname_not_in: [String]
+  middlename: String
+  middlename_not: String
+  middlename_contains: String
+  middlename_not_contains: String
+  middlename_starts_with: String
+  middlename_not_starts_with: String
+  middlename_ends_with: String
+  middlename_not_ends_with: String
+  middlename_i: String
+  middlename_not_i: String
+  middlename_contains_i: String
+  middlename_not_contains_i: String
+  middlename_starts_with_i: String
+  middlename_not_starts_with_i: String
+  middlename_ends_with_i: String
+  middlename_not_ends_with_i: String
+  middlename_in: [String]
+  middlename_not_in: [String]
+  lastname: String
+  lastname_not: String
+  lastname_contains: String
+  lastname_not_contains: String
+  lastname_starts_with: String
+  lastname_not_starts_with: String
+  lastname_ends_with: String
+  lastname_not_ends_with: String
+  lastname_i: String
+  lastname_not_i: String
+  lastname_contains_i: String
+  lastname_not_contains_i: String
+  lastname_starts_with_i: String
+  lastname_not_starts_with_i: String
+  lastname_ends_with_i: String
+  lastname_not_ends_with_i: String
+  lastname_in: [String]
+  lastname_not_in: [String]
+  dateOfBirth: String
+  dateOfBirth_not: String
+  dateOfBirth_contains: String
+  dateOfBirth_not_contains: String
+  dateOfBirth_starts_with: String
+  dateOfBirth_not_starts_with: String
+  dateOfBirth_ends_with: String
+  dateOfBirth_not_ends_with: String
+  dateOfBirth_i: String
+  dateOfBirth_not_i: String
+  dateOfBirth_contains_i: String
+  dateOfBirth_not_contains_i: String
+  dateOfBirth_starts_with_i: String
+  dateOfBirth_not_starts_with_i: String
+  dateOfBirth_ends_with_i: String
+  dateOfBirth_not_ends_with_i: String
+  dateOfBirth_in: [String]
+  dateOfBirth_not_in: [String]
+  motherName: String
+  motherName_not: String
+  motherName_contains: String
+  motherName_not_contains: String
+  motherName_starts_with: String
+  motherName_not_starts_with: String
+  motherName_ends_with: String
+  motherName_not_ends_with: String
+  motherName_i: String
+  motherName_not_i: String
+  motherName_contains_i: String
+  motherName_not_contains_i: String
+  motherName_starts_with_i: String
+  motherName_not_starts_with_i: String
+  motherName_ends_with_i: String
+  motherName_not_ends_with_i: String
+  motherName_in: [String]
+  motherName_not_in: [String]
+  fatherName: String
+  fatherName_not: String
+  fatherName_contains: String
+  fatherName_not_contains: String
+  fatherName_starts_with: String
+  fatherName_not_starts_with: String
+  fatherName_ends_with: String
+  fatherName_not_ends_with: String
+  fatherName_i: String
+  fatherName_not_i: String
+  fatherName_contains_i: String
+  fatherName_not_contains_i: String
+  fatherName_starts_with_i: String
+  fatherName_not_starts_with_i: String
+  fatherName_ends_with_i: String
+  fatherName_not_ends_with_i: String
+  fatherName_in: [String]
+  fatherName_not_in: [String]
   email: String
   email_not: String
   email_contains: String
@@ -120,8 +196,16 @@ enum SortUsersBy {
   id_DESC
   name_ASC
   name_DESC
-  surname_ASC
-  surname_DESC
+  middlename_ASC
+  middlename_DESC
+  lastname_ASC
+  lastname_DESC
+  dateOfBirth_ASC
+  dateOfBirth_DESC
+  motherName_ASC
+  motherName_DESC
+  fatherName_ASC
+  fatherName_DESC
   email_ASC
   email_DESC
 }
@@ -129,7 +213,11 @@ enum SortUsersBy {
 input UserOrderByInput {
   id: OrderDirection
   name: OrderDirection
-  surname: OrderDirection
+  middlename: OrderDirection
+  lastname: OrderDirection
+  dateOfBirth: OrderDirection
+  motherName: OrderDirection
+  fatherName: OrderDirection
   email: OrderDirection
 }
 
@@ -140,7 +228,11 @@ enum OrderDirection {
 
 input UserUpdateInput {
   name: String
-  surname: String
+  middlename: String
+  lastname: String
+  dateOfBirth: String
+  motherName: String
+  fatherName: String
   email: String
   password: String
   posts: PostRelateToManyInput
@@ -168,7 +260,11 @@ input UsersUpdateInput {
 
 input UserCreateInput {
   name: String
-  surname: String
+  middlename: String
+  lastname: String
+  dateOfBirth: String
+  motherName: String
+  fatherName: String
   email: String
   password: String
   posts: PostRelateToManyInput

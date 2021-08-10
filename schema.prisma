@@ -9,14 +9,18 @@ generator client {
 }
 
 model User {
-  id       String  @id @default(cuid())
-  name     String?
-  surname  String?
-  email    String? @unique
-  password String?
-  posts    Post[]  @relation("Post_author")
-  role     Role?   @relation("User_role", fields: [roleId], references: [id])
-  roleId   String? @map("role")
+  id          String  @id @default(cuid())
+  name        String?
+  middlename  String?
+  lastname    String?
+  dateOfBirth String?
+  motherName  String?
+  fatherName  String?
+  email       String? @unique
+  password    String?
+  posts       Post[]  @relation("Post_author")
+  role        Role?   @relation("User_role", fields: [roleId], references: [id])
+  roleId      String? @map("role")
 
   @@index([roleId])
 }
