@@ -42,6 +42,8 @@ export default withAuth(
     db: {
       adapter: 'prisma_postgresql',
       url: process.env.DATABASE_URL || 'postgres://postgres:postgres@db/postgres',
+      useMigrations: true,
+   
     },
     ui: {
       isAccessAllowed: (context) => !!context.session?.data,
