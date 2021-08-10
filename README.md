@@ -1,5 +1,9 @@
 ## Open Source School Management System 
 
+[![SkulMS CI](https://github.com/bernardnongpoh/skulms/actions/workflows/staging.yml/badge.svg?branch=staging)](https://github.com/bernardnongpoh/skulms/actions/workflows/staging.yml)
+
+
+
 ### Technology Stack
 - KeyStoneJS 6 
 - Postgres
@@ -70,3 +74,38 @@ Two branch in the repo
 - prod branch - Push to docker hub from pull request from staging. 
 - dev branch - No need to push to docker hub
 - staging - Testing for Carl
+
+
+Workflow: 
+- Development under dev branch and then pull request to the staging and finally pulling request to the production branch
+- Github actions for building docker images on merge staging which will psuh to dockerhub with tag :staging. Similarly for production merged, the action will create an image and push to production tag. 
+
+
+# Script for Staging
+
+
+1. Pull Repo for staging branch
+2. Build docker image
+3. Push to dockerhub
+4. Login to ec2 instance
+5. Stop the docker instance
+6. Pull the latest one 
+7. Restart the docker 
+
+
+## In the server 
+
+docker-compose stop
+docker-compose rm -f
+docker-compose -f docker-compose.yml up -d
+
+
+# Production Server Will not have database, we to run migration for this
+
+
+# Sync Data From Production to Dev By Pulling for server. 
+1. Expose port in server 
+2. Script to Sync Data from Staging and Production Server. 
+3. Run Migration and Deploy new image to server. 
+
+
